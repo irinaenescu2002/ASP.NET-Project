@@ -10,6 +10,8 @@ namespace ASP.NET_Project.Models
 
         public Location Location { get; set; } = new Location();
 
+        public List<Horse> Horses { get; set; } = new List<Horse> { new Horse() };
+
         public Guid LocationID { get; set; }
     }
 }

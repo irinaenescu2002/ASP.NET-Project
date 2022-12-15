@@ -12,8 +12,15 @@ namespace ASP.NET_Project.Models
 
         public string BirthDate { get; set; } = string.Empty;
 
+        public Category Category { get; set; } = new Category();
+
         public RidingCenter RidingCenter { get; set; } = new RidingCenter();
 
+        public List<Appointment> Appointments { get; set; } = new List<Appointment>();
+
         public Guid RidingCenterId { get; set; }
+
+        public Guid CategoryID { get; set; }
+
     }
 }

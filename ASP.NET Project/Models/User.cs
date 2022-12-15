@@ -14,5 +14,7 @@ namespace ASP.NET_Project.Models
 
         public string Adress { get; set; } = string.Empty;
 
+        public List<Appointment> Appointments { get; set; } = new List<Appointment>();
+
     }
 }

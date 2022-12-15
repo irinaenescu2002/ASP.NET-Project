@@ -16,5 +16,6 @@ namespace ASP.NET_Project.Models
 
         public string Number { get; set; } = string.Empty;
 
+        public RidingCenter RidingCenter { get; set; } = new RidingCenter();
     }
 }
