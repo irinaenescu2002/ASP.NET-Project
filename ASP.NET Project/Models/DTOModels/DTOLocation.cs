@@ -1,8 +1,6 @@
-﻿using ASP.NET_Project.Models.Base;
-
-namespace ASP.NET_Project.Models
+﻿namespace ASP.NET_Project.Models.DTOModels
 {
-    public class Location : BaseEntity
+    public class DTOLocation
     {
         public string Country { get; set; } = string.Empty;
 
@@ -15,7 +13,5 @@ namespace ASP.NET_Project.Models
         public string Street { get; set; } = string.Empty;
 
         public int Number { get; set; } = 0;
-
-        public RidingCenter RidingCenter { get; set; } = default!;
     }
 }
