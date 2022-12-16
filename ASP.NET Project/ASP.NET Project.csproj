@@ -20,8 +20,14 @@
   <ItemGroup>
     <Folder Include="Repositories\Horses\" />
     <Folder Include="Repositories\Appointments\" />
+    <Folder Include="Repositories\Categories\" />
     <Folder Include="Repositories\RidingCenters\" />
     <Folder Include="Repositories\Users\" />
+    <Folder Include="Services\Appointments\" />
+    <Folder Include="Services\Categories\" />
+    <Folder Include="Services\Horses\" />
+    <Folder Include="Services\RidingCenters\" />
+    <Folder Include="Services\Users\" />
   </ItemGroup>
 
 </Project>

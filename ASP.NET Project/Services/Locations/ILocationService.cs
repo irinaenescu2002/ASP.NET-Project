@@ -7,11 +7,11 @@ namespace ASP.NET_Project.Services.Locations
     public interface ILocationService
     {
         Task Create(Location newLocation);
-
-        Task Delete(Guid id);
-
+     
         IAsyncEnumerable<Location> Get();
-
+                   
         Task<bool> Update(DTOLocation location, Guid id);
+
+        Task Delete(Guid id); 
     }
 }

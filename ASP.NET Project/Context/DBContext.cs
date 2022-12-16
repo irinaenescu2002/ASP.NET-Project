@@ -23,17 +23,17 @@ namespace ASP.NET_Project.Context
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-            /// One to one (Locations - RidingCenters)
+            // One to one (Locations - RidingCenters)
 
             modelBuilder.Entity<RidingCenter>().HasOne(o => o.Location).WithOne(o => o.RidingCenter).HasForeignKey<RidingCenter>(o => o.LocationID);
 
-            /// One to Many (RidingCenters - Horses, Category - Horses)
+            // One to Many (RidingCenters - Horses, Category - Horses)
 
             modelBuilder.Entity<RidingCenter>().HasMany(o => o.Horses).WithOne(o => o.RidingCenter);
 
             modelBuilder.Entity<Category>().HasMany(o => o.Horses).WithOne(o => o.Category);
 
-            /// Many to Many (Users - Horses)
+            // Many to Many (Users - Horses)
 
             modelBuilder.Entity<Appointment>().HasKey(o => new { o.HorseId, o.PersonId });
 

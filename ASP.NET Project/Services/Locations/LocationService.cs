@@ -14,11 +14,15 @@ namespace ASP.NET_Project.Services.Locations
             _ILocationRepo = iLocationRepo;
         }
         
+        // Create a new location
+
         public async Task Create(Location location)
         {
             await _ILocationRepo.CreateAsync(location);
             await _ILocationRepo.SaveAsync();
         }
+
+        // Delete a location by ID
 
         public async Task Delete(Guid id)
         {
@@ -28,10 +32,14 @@ namespace ASP.NET_Project.Services.Locations
             await _ILocationRepo.SaveAsync();
         }
 
+        // Show all locations 
+
         public IAsyncEnumerable<Location> Get()
         {
              return _ILocationRepo.GetAsync();
         }
+
+        // Update a location by ID
 
         public async Task<bool> Update(DTOLocation location, Guid id)
         {

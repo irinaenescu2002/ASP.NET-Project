@@ -21,6 +21,8 @@ namespace ASP.NET_Project.Controllers
             _ILocationService = iLocationService;
         }
 
+        // Create new location - CREATE 
+
         [HttpPost("Create Location")]
         public async Task<ActionResult<string>> CreateLocation(DTOLocation location)
         {
@@ -39,13 +41,7 @@ namespace ASP.NET_Project.Controllers
             return Ok("Location Created");
         }
 
-        [HttpDelete("Delete Location/{id}")]
-        public async Task<ActionResult<string>> DeleteLocation(Guid id)
-        {
-            await _ILocationService.Delete(id);
-
-            return Ok("Location Deleted");
-        }
+        // Show all locations - READ
 
         [HttpGet("Get Location")]
         public async Task<ActionResult<string>> GetLocations()
@@ -55,6 +51,8 @@ namespace ASP.NET_Project.Controllers
             return Ok(allLocations);
         }
 
+        // Update location by ID 
+
         [HttpPut("Update Location/{id}")]
         public async Task<ActionResult<string>> UpdateLocation(DTOLocation location, Guid id)
         {
@@ -63,5 +61,14 @@ namespace ASP.NET_Project.Controllers
             if (ok) return Ok("Updated"); else return StatusCode(304);
         }
 
+        // Delete location by id - DELETE 
+
+        [HttpDelete("Delete Location/{id}")]
+        public async Task<ActionResult<string>> DeleteLocation(Guid id)
+        {
+            await _ILocationService.Delete(id);
+
+            return Ok("Location Deleted");
+        }
     }
 }

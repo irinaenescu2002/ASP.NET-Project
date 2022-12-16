@@ -37,7 +37,7 @@ namespace ASP.NET_Project.Repositories.Generic
             return await _table.FindAsync(id);
         }
 
-        /// Save - Generic
+        /// Save the changes - Generic
 
         public async Task<bool> SaveAsync()
         {
@@ -54,7 +54,7 @@ namespace ASP.NET_Project.Repositories.Generic
             return false;
         }
 
-        /// Get - Generic
+        /// Get (show all rows) - Generic
         
         public async IAsyncEnumerable<TEntity> GetAsync()
         {
