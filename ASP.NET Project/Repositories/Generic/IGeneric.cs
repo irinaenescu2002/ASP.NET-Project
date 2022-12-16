@@ -6,6 +6,12 @@ namespace ASP.NET_Project.Repositories.Generic
     {
         Task CreateAsync (TEntity entity);
 
+        Task DeleteAsync(TEntity entity);
+
+        Task <TEntity> FindByIDAsync(Guid id);
+
+        IAsyncEnumerable<TEntity> GetAsync();
+
         Task<bool> SaveAsync(); 
     }
 }

@@ -16,10 +16,28 @@ namespace ASP.NET_Project.Repositories.Generic
             _table = _DBContext.Set<TEntity>();
         }
 
+        /// Create - Generic 
+       
         public async Task CreateAsync(TEntity entity)
         {
             await _table.AddAsync(entity);
         }
+
+        /// Delete - Generic
+
+        public async Task DeleteAsync(TEntity entity)
+        {
+            _table.Remove(entity);
+        }
+
+        /// Find by ID - Generic
+
+        public async Task<TEntity> FindByIDAsync(Guid id)
+        {
+            return await _table.FindAsync(id);
+        }
+
+        /// Save - Generic
 
         public async Task<bool> SaveAsync()
         {
@@ -35,5 +53,18 @@ namespace ASP.NET_Project.Repositories.Generic
 
             return false;
         }
+
+        /// Get - Generic
+        
+        public async IAsyncEnumerable<TEntity> GetAsync()
+        {
+            var location = await _table.AsNoTracking().ToListAsync();
+
+            foreach (var entity in location)
+            {
+                yield return entity;
+            }
+        }
+
     }
 }

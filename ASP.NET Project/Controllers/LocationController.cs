@@ -11,6 +11,7 @@ namespace ASP.NET_Project.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
+
     public class LocationController : ControllerBase
     {
         public ILocationService _ILocationService;
@@ -37,5 +38,30 @@ namespace ASP.NET_Project.Controllers
 
             return Ok("Location Created");
         }
+
+        [HttpDelete("Delete Location/{id}")]
+        public async Task<ActionResult<string>> DeleteLocation(Guid id)
+        {
+            await _ILocationService.Delete(id);
+
+            return Ok("Location Deleted");
+        }
+
+        [HttpGet("Get Location")]
+        public async Task<ActionResult<string>> GetLocations()
+        {
+            var allLocations = _ILocationService.Get();
+
+            return Ok(allLocations);
+        }
+
+        [HttpPut("Update Location/{id}")]
+        public async Task<ActionResult<string>> UpdateLocation(DTOLocation location, Guid id)
+        {
+            var ok = await _ILocationService.Update(location, id);
+
+            if (ok) return Ok("Updated"); else return StatusCode(304);
+        }
+
     }
 }

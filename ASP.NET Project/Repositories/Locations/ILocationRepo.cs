@@ -3,7 +3,5 @@ using ASP.NET_Project.Repositories.Generic;
 
 namespace ASP.NET_Project.Repositories.Locations
 {
-    public interface ILocationRepo : IGeneric<Location>
-    {
-    }
+    public interface ILocationRepo : IGeneric<Location>{ }
 }
