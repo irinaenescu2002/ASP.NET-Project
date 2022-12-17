@@ -1,5 +1,7 @@
 # ASP.NET Project
 
+**Aplicatia Web a unui Centru de Echitatie**
+
 Proiectul contine:
 - .Net 6
 - Angular 12  
